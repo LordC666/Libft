@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cnieto <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 16:21:28 by cnieto            #+#    #+#             */
-/*   Updated: 2024/07/23 13:36:13 by cnieto           ###   ########.fr       */
+/*   Updated: 2024/09/18 15:56:39 by cnieto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 

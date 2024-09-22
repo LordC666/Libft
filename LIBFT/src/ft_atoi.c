@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cnieto <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 16:46:52 by cnieto            #+#    #+#             */
-/*   Updated: 2024/07/24 16:00:04 by cnieto           ###   ########.fr       */
+/*   Created: 2024/09/18 11:15:53 by cnieto            #+#    #+#             */
+/*   Updated: 2024/09/18 11:21:27 by cnieto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int	ft_atoi(char *str)
 		else
 			i++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-	}
+	while (str[i] >= '0' && str[i] <= '9')
+		res = res * 10 + str[i++] - '0';
 	return (res * s);
 }

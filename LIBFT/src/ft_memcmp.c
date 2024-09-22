@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                              			:+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cnieto <cnieto@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 16:52:22 by cnieto            #+#    #+#             */
-/*   Updated: 2024/09/16 17:16:55 by cnieto           ###   ########.fr       */
+/*   Created: 2024/09/18 11:15:53 by cnieto            #+#    #+#             */
+/*   Updated: 2024/09/18 13:20:20 by cnieto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "../libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
@@ -23,5 +23,5 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		i++;
 	}
-	return (0);
+	return ('\0');
 }

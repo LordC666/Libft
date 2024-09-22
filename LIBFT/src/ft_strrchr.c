@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                              			:+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cnieto <cnieto@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:52:22 by cnieto            #+#    #+#             */
-/*   Updated: 2024/09/16 17:16:55 by cnieto           ###   ########.fr       */
+/*   Updated: 2024/09/18 16:00:27 by cnieto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_strrchr(const char *str, int c)
 	i = 0;
 	while (str[i])
 		i++;
-	while(i >= 0)
+	while (i >= 0)
 	{
 		if (str[i] == (char )c)
-			return((char *)(str + i));
+			return ((char *)(str + i));
 		i--;
 	}
 	return ('\0');

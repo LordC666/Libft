@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                              			:+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cnieto <cnieto@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:52:22 by cnieto            #+#    #+#             */
-/*   Updated: 2024/09/16 17:16:55 by cnieto           ###   ########.fr       */
+/*   Updated: 2024/09/18 16:02:58 by cnieto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "../libft.h"
 
 static int	ft_isset(char c, const char *set)
 {
-		while (*set)
-		{
-			if (c == *set)
-				return (1);
-			set++;
-		}
-		return (0);
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	start;
-	int	end;
+	int		start;
+	int		end;
 	char	*result;
 
 	if (!s1 || !set)
 		return ('\0');
-
 	start = 0;
 	end = ft_strlen(s1) - 1;
-
 	if (!result)
 		return ('\0');
 	while (s1[start] && ft_isset(s1[start], set))

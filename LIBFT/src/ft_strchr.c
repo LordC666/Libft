@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                              			:+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cnieto <cnieto@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 16:52:22 by cnieto            #+#    #+#             */
-/*   Updated: 2024/09/16 17:16:55 by cnieto           ###   ########.fr       */
+/*   Created: 2024/09/18 11:15:53 by cnieto            #+#    #+#             */
+/*   Updated: 2024/09/18 14:07:38 by cnieto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *str, int c)
 {
-	int	i;
+	int				i;
 	unsigned char	j;
 
 	i = 0;
@@ -22,9 +22,8 @@ char	*ft_strchr(const char *str, int c)
 		if ((unsigned char)str[i] == j)
 			return ((char *)&str[i]);
 		i++;
-	}	
+	}
 	if (j == '\0')
 		return ((char *)&str[i]);
-	
 	return ('\0');
 }
