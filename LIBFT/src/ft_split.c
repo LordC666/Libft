@@ -6,7 +6,7 @@
 /*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:52:22 by cnieto            #+#    #+#             */
-/*   Updated: 2024/09/22 18:26:40 by cnieto           ###   ########.fr       */
+/*   Updated: 2024/09/26 15:18:54 by cnieto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static int	ft_count_words(const char *s, char c)
 	return (count);
 }
 
-static int	ft_alloc_word(const char *s, char c)
+static char	*ft_alloc_word(const char *s, char c)
 {
-	int     len;
+	int		len;
 	char	*word;
 
 	len = 0;
@@ -59,24 +59,25 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 
 	i = 0;
-	split = '\0';
-	if (s && (split = malloc((ft_count_words(s, c) + 1) * sizeof(char *))))
+	split = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+	if (!split || !s)
+		return ('\0');
+	while (*s)
 	{
-		while (*s != '\0')
+		if (*s != c)
 		{
-			if (*s != c)
+			split[i] = ft_alloc_word(s, c);
+			if (!split[i++])
 			{
-				if (!(split[i++] = ft_alloc_word(s, c)))
-			{
-				return ('\0');
+				while (i > 0)
+					free(split[--i]);
+				return (free(split), '\0');
 			}
 			while (*s && *s != c)
 				s++;
-			}
-			else
-				s++;      
-        	}
-		split[i] = '\0';    
+		}
+		else
+			s++;
 	}
-	return (split);
+	return (split[i] = '\0', split);
 }
