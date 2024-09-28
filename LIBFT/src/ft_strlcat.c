@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include "../libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	len_dest;
-	unsigned int	len_src;
+	size_t	i;
+	size_t	len_dest;
+	size_t	len_src;
 
 	i = 0;
 	len_dest = 0;

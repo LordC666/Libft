@@ -33,12 +33,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return ('\0');
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	if (!result)
-		return ('\0');
 	while (s1[start] && ft_isset(s1[start], set))
 		start++;
 	while (end >= start && ft_isset(s1[end], set))
 		end--;
 	result = ft_substr(s1, start, end - start + 1);
+	if (!result)
+		return ('\0');
 	return (result);
 }

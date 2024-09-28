@@ -6,7 +6,7 @@
 /*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 18:31:04 by cnieto            #+#    #+#             */
-/*   Updated: 2024/09/22 19:00:53 by cnieto           ###   ########.fr       */
+/*   Updated: 2024/09/28 21:06:31 by cnieto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (!s || !f)
-		return ('\0');
+		return ;
 	while (s[i])
 	{
 		f(i, s + i);

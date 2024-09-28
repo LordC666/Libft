@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: cnieto <cnieto@student.42madrid.com>       +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2024/09/16 16:52:22 by cnieto            #+#    #+#             */
 /*   Updated: 2024/09/18 16:11:00 by cnieto           ###   ########.fr       */
 /*                                                                            */
@@ -14,29 +17,19 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	len_max;
 	char	*result;
+	size_t	str_len;
 
-	i = 0;
-	if (!s || start > ft_strlen(s))
-	{
-		result = (char *)malloc(1);
-		if (result)
-			result[0] = '\0';
-		return (result);
-	}
-	len_max = ft_strlen(s) - start;
-	if (len > len_max)
-		len = len_max;
-	result = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!s)
+		return (NULL);
+	str_len = ft_strlen(s);
+	if (start >= str_len)
+		return ((char *)ft_calloc(1, sizeof(char)));
+	if (len > str_len - (size_t)start)
+		len = str_len - (size_t)start;
+	result = (char *)malloc(len + 1);
 	if (!result)
-		return ('\0');
-	while (i < len)
-	{
-		result[i] = s[start + i];
-		i++;
-	}
-	result[i] = '\0';
+		return (NULL);
+	ft_strlcpy(result, (s + start), len + 1);
 	return (result);
 }
